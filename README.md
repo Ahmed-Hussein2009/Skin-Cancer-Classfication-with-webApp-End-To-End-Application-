@@ -90,4 +90,6 @@ Tong, H., Zhi, Z., Hang, Z., Zhongyue, Z., Junyuan, X., Mu, L. (2018). Bag of Tr
 
 Qishen, H., Bo, L., Fuxu L. (2020). Identifying Melanoma Images using EfficientNet Ensemble: Winning Solution to the SIIM-ISIC Melanoma Classification Challenge. https://arxiv.org/abs/2010.05351
 
+#download full Project from drive
+https://drive.google.com/drive/folders/1jcR6DfDYAKJp33toiuKcLSbJ8b3S45sP?usp=sharing
 
