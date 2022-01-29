@@ -1,0 +1,68 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <style>
+                    * {
+            margin: 0;
+            padding: 0;
+            list-style-type:none;
+            }
+            header {
+                height:40px;
+                width:100%;
+                position:fixed;
+                background:rgba(0,0,0,0.9);
+                z-index:120;
+            }
+            header li {
+                float: right;
+                list-style-type:none;
+                border-right: 1px solid #252525;
+            }
+            header li a {
+                float: right;
+                width: 98px;
+                height: 12px;
+                padding: 14px 7px;
+                color: #fff;
+                text-decoration: none;
+                text-align: center;
+                text-transform: uppercase;
+                font-weight: 700;
+                letter-spacing: 1px;
+                font: normal 62.5% "proxima-nova-alt";
+            }
+            header .logo {
+                float: left;
+                width: 400;
+                height: 40px;
+                background:#fde624 no-repeat 16px 1px;
+            }
+            #show-nails:hover div.thumbnail-peekaboo {
+                display:block;
+            }
+
+    </style>
+    <header>
+        <div class="logo"><h1>Skin Cancer Classfication</h1> </div>
+        <div class="nav">
+          <ul>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+            <li><a href="http://127.0.0.1:5000/">Solution</a></li>
+            <li id="show-nails"><a href="http://127.0.0.1:5000/home">Home</a></li>
+          </ul>
+        </div>
+    </header>
+    <body>        
+            <br>
+            <br>
+
+            <img src="{{ "static/pics/about.png" }}" width="1300" height="1100">
+            <br>
+            <br>
+           
+        
+    </body>
+</html>

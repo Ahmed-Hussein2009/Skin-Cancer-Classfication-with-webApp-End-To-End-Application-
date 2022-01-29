@@ -1,0 +1,150 @@
+ 
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <header>
+        <div class="logo"><h1>Skin Cancer Classfication</h1> </div>
+        <div class="nav">
+          <ul>
+            <li id="show-nails">
+              <li><a href="http://127.0.0.1:5000/about">About</a></li>
+              <li><a href="http://127.0.0.1:5000/">Solution</a></li>
+              <li id="show-nails"><a href="http://127.0.0.1:5000/home">Home</a></li>
+          </ul>
+        </div>
+    </header>
+    <style>
+        body{
+            background-image: url('https://raw.githubusercontent.com/Ahmed-Hussein2009/Ahmed-Hussein2009/main/bg.png');
+            background-repeat: repeat-y;
+        }
+            * {
+        margin: 0;
+        padding: 0;
+        list-style-type:none;
+        }
+        header {
+          height:40px;
+          width:100%;
+          position:fixed;
+          background:rgba(0,0,0,0.9);
+          z-index:120;
+        }
+        header li {
+          float: right;
+          list-style-type:none;
+          border-right: 1px solid #252525;
+        }
+        header li a {
+          float: right;
+          width: 98px;
+          height: 12px;
+          padding: 14px 7px;
+          color: #fff;
+          text-decoration: none;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1px;
+          font: normal 62.5% "proxima-nova-alt";
+        }
+        header .logo {
+          float: left;
+          width: 400;
+          height: 40px;
+          background:#fde624 no-repeat 16px 1px;
+        }
+        .f {
+          
+          background: rgb(255 208 208 / 30%);
+          margin-right: 70px;
+          margin-left: 50px;
+          margin-bottom: 50px;
+          border-radius: 35px;
+          padding-left: 20px;
+          padding-top: 20px;
+          padding-bottom: 40px;
+          
+        }
+        .h{
+          color: #FF0200;
+        }
+        .btn{
+          
+          border-radius: 7px;
+          border-width: 2px;
+          background-color: rgb(255, 0, 0);
+          border-color: darkred;
+          font-size: 15px;
+          padding: 10px;
+          margin-left: 400px;
+          margin-bottom: 20px;
+          color: white;
+       
+        }
+        .s{
+          margin-right: 110px;
+          margin-top: 15px;
+        }
+        .figgg{
+          margin-left:auto;
+          margin-right: auto;
+          display: block;
+          margin-bottom: 70px;
+        }
+        .ftr{
+          margin-top: 1cm;
+        }
+        .footer{
+          height: 40px;
+          background-color: black;
+          color: white;
+          
+          
+        }
+        .hh3{
+          margin-right: auto;
+          margin-left:25%;
+        }
+        
+    </style>
+         
+    <body>
+      <br><br><br><br><br>
+      <!-- <button class="btn" onclick="window.print()"  style="float: right;">Print Result</button>  -->
+      <div class="f"> 
+        <div class="h">
+            <center><h1>Patient Details</h1></center><br>
+        </div>
+        
+        <div class="n">
+
+          
+          <img src="{{ url_for('static', filename=pth) }}" height="200" width="250" style="float: right;" class ="s"><br><br><br>
+          <h2>Patient ID : {{data['id']}} </h2><br>
+          <h2>Name : {{data['name']}} </h2><br>
+          <h2>Age : {{data['age']}} </h2><br>
+          <h2>Gender : {{data['gender']}} </h2><br><br><br>
+          <button class="btn" onclick="window.print()"  style="animation-delay:0.07s">Print Result</button> 
+        </div>       
+        </div>
+        </div>
+        <div >
+          <center><h1>Model Predction</h1></center>
+          <center><img src="{{ url_for('static', filename=f) }}"   class="figgg"></center><br>
+
+          
+      </div>
+        
+      <div class="footer">
+
+          <h2 class="hh3">Copyright 2021 ©  Reserved ITI-AI-Intake1@Nasercity</h2>
+      </div>
+     
+    </body>
+        
+</html>
+
+
+ 

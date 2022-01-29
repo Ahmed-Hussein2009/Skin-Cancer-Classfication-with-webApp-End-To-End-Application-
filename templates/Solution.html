@@ -1,0 +1,338 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/bootstrap.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/style.css') }}">
+    <header>
+        <div class="logo"><h1>Skin Cancer Classfication</h1> </div>
+        <div class="nav">
+          <ul>
+            <li><a href="http://127.0.0.1:5000/about">About</a></li>
+            <li><a href="http://127.0.0.1:5000/">Solution</a></li>
+            <li id="show-nails"><a href="http://127.0.0.1:5000/home">Home</a></li>
+          </ul>
+        </div>
+    </header>
+    <style>
+            * {
+        margin: 0;
+        padding: 0;
+        list-style-type:none;
+        }
+        header {
+        height:40px;
+        width:100%;
+        position:fixed;
+        background:rgba(0,0,0,0.9);
+        z-index:120;
+        }
+        header li {
+        float: right;
+        list-style-type:none;
+        border-right: 1px solid #252525;
+        }
+        header li a {
+        float: right;
+        width: 98px;
+        height: 12px;
+        padding: 14px 7px;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font: normal 62.5% "proxima-nova-alt";
+        }
+        header .logo {
+        float: left;
+        width: 400;
+        height: 40px;
+        background:#fde624 no-repeat 16px 1px;
+        }
+        #show-nails:hover div.thumbnail-peekaboo {
+        display:block;
+        }
+        header div.thumbnail-peekaboo {
+        display:none;
+        height:165px;
+        width:3000px;
+        top:40px;
+        left:0;
+        background:#222;
+        background-size:100px 100px;
+        position:absolute;
+        }
+        /*header div.thumbnail-peekaboo:hover {
+        -webkit-animation: TMNT 4s ease-in;
+        -webkit-animation-fill-mode:backwards;
+        }*/
+        .thumb {
+        height:140px;
+        width:210px;
+        top:136px;
+        left:12px;
+        position:relative;
+        background-size:contain;
+        box-shadow:-12px 0 0 12px #000;
+        }
+        .thumb:last-of-type {
+        box-shadow:0 0 0 12px #000;
+        }
+        .thumb:after {
+        content:attr(title);
+        font:normal normal 20pt 'impact';
+        position:relative;
+        }
+        .thumb:hover {
+        -webkit-filter: grayscale(80%);
+        -moz-filter: grayscale(80%);
+        -ms-filter: grayscale(80%);
+        -o-filter: grayscale(80%);
+        filter: grayscale(80%);
+        filter: url(grayscale.svg#greyscale);
+        filter: gray;
+        }
+        @-webkit-keyframes TMNT {
+        0%  { left: 0px; }
+        100% { left: -1200px; }
+        }
+        a.prev,a.next {
+        height:91px;
+        position:absolute;
+        width:43px;
+        top:50%;
+        margin-top:-30px;
+        opacity:0.6;
+        text-indent:-99999px;
+        cursor:pointer;
+        -webkit-transition:opacity 200ms ease-out;
+        }
+        body {
+        font-family: sans-serif;
+        background-color: #eeeeee;
+        }
+
+        .file-upload {
+        background-color: #ffffff;
+        width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        }
+
+        .file-upload-btn {
+        width: 100%;
+        margin: 0;
+        color: #fff;
+        background: #1FB264;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        border-bottom: 4px solid #15824B;
+        transition: all .2s ease;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        }
+        .sent {
+        width: 20%;
+        margin: 0;
+        color: #fff;
+        background: #1FB264;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        border-bottom: 4px solid #15824B;
+        transition: all .2s ease;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        position: absolute;
+        }
+
+        .file-upload-btn:hover {
+        background: #1AA059;
+        color: #ffffff;
+        transition: all .2s ease;
+        cursor: pointer;
+        }
+
+        .file-upload-btn:active {
+        border: 0;
+        transition: all .2s ease;
+        }
+
+        .file-upload-content {
+        display: none;
+        text-align: center;
+        }
+
+        .file-upload-input {
+        position: absolute;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        opacity: 0;
+        cursor: pointer;
+        }
+
+        .image-upload-wrap {
+        margin-top: 20px;
+        border: 4px dashed #1FB264;
+        position: relative;
+        }
+
+        .image-dropping,
+        .image-upload-wrap:hover {
+        background-color: #1FB264;
+        border: 4px dashed #ffffff;
+        }
+
+        .image-title-wrap {
+        padding: 0 15px 15px 15px;
+        color: #222;
+        }
+
+        .drag-text {
+        text-align: center;
+        }
+
+        .drag-text h3 {
+        font-weight: 100;
+        text-transform: uppercase;
+        color: #15824B;
+        padding: 60px 0;
+        }
+
+        .file-upload-image {
+        max-height: 200px;
+        max-width: 200px;
+        margin: auto;
+        padding: 20px;
+        }
+
+        .remove-image {
+        width: 200px;
+        margin: 0;
+        color: #fff;
+        background: #cd4535;
+        border: none;
+        padding: 10px;
+        border-radius: 4px;
+        border-bottom: 4px solid #b02818;
+        transition: all .2s ease;
+        outline: none;
+        text-transform: uppercase;
+        font-weight: 700;
+        }
+
+        .remove-image:hover {
+        background: #c13b2a;
+        color: #ffffff;
+        transition: all .2s ease;
+        cursor: pointer;
+        }
+
+        .remove-image:active {
+        border: 0;
+        transition: all .2s ease;
+        }
+        .footer{
+          height: 40px;
+          background-color: black;
+          color: white;
+          
+          
+        }
+        .hh3{
+          margin-right: auto;
+          margin-left:25%;
+        }
+
+</style>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    
+    
+    <br><br><br>
+    <div style="float: left;"class="file-upload">
+
+        <label for="exampleInputEmail1" class="form-label value=ISCI001" >ID</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="display:inline"><br>
+
+        <label for="exampleInputEmail1" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="display:inline"><br>
+
+        <label for="exampleInputEmail1" class="form-label" value="ISCI001">Age</label>
+        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" style="display:inline"><br>
+
+        <label for="exampleInputEmail1" class="form-label">Gender</label>
+        <select name="cars" id="cars" style="display:inline">
+        <option value="volvo">Volvo</option>
+        <option value="saab">Saab</option>
+
+    </div>
+    <div class="file-upload" style="float: right;">
+        <form name="upload" method="POST" action="http://127.0.0.1:5000/about" enctype="multipart/form-data" accept-charset="utf-8">
+
+            <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Image</button>
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                    <h3>Drag and drop a file or select add Image</h3>
+                    </div>
+                    </div>
+                    <div class="file-upload-content">
+                        <img class="file-upload-image" src="#" alt="your image" />
+                    <div class="image-title-wrap">
+                    <Center><input type="submit" value="Send" class="sent"></Center><button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
+                </div>
+            </div>
+            
+        </form>
+    </div>
+
+    <script>
+
+            function readURL(input) {
+            if (input.files && input.files[0]) {
+            
+            var reader = new FileReader();
+            
+            reader.onload = function(e) {
+            $('.image-upload-wrap').hide();
+            
+            $('.file-upload-image').attr('src', e.target.result);
+            $('.file-upload-content').show();
+            
+            $('.image-title').html(input.files[0].name);
+            };
+            
+            reader.readAsDataURL(input.files[0]);
+            
+            } else {
+            removeUpload();
+            }
+            }
+            
+            function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+            $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+            $('.image-upload-wrap').removeClass('image-dropping');
+            });
+        </script>
+        
+    </body>
+</html>
+<script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+

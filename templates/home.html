@@ -1,0 +1,192 @@
+   
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    </head>
+    <header>
+        <div class="logo"><h1>Skin Cancer Classfication</h1> </div>
+        <div class="nav">
+          <ul>
+            <li id="show-nails">
+              <li><a href="http://127.0.0.1:5000/about">About</a></li>
+              <li><a href="http://127.0.0.1:5000/">Solution</a></li>
+              <li id="show-nails"><a href="http://127.0.0.1:5000/home">Home</a></li>
+          </ul>
+        </div>
+    </header>
+    <style>
+      
+            * {
+        margin: 0;
+        padding: 0;
+        list-style-type:none;
+        }
+        header {
+          height:40px;
+          width:100%;
+          position:fixed;
+          background:rgba(0,0,0,0.9);
+          z-index:120;
+        }
+        header li {
+          float: right;
+          list-style-type:none;
+          border-right: 1px solid #252525;
+        }
+        header li a {
+          float: right;
+          width: 98px;
+          height: 12px;
+          padding: 14px 7px;
+          color: #fff;
+          text-decoration: none;
+          text-align: center;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1px;
+          font: normal 62.5% "proxima-nova-alt";
+        }
+        header .logo {
+          float: left;
+          width: 400;
+          height: 40px;
+          background:#fde624 no-repeat 16px 1px;
+        }
+        #show-nails:hover div.thumbnail-peekaboo {
+          display:block;
+        }
+        header div.thumbnail-peekaboo {
+          display:none;
+          height:165px;
+          width:3000px;
+          top:40px;
+          left:0;
+          background:#222;
+          background-size:100px 100px;
+          position:absolute;
+        }
+        /*header div.thumbnail-peekaboo:hover {
+          -webkit-animation: TMNT 4s ease-in;
+          -webkit-animation-fill-mode:backwards;
+        }*/
+        .thumb {
+          height:140px;
+          width:210px;
+          top:136px;
+          left:12px;
+          position:relative;
+          background-size:contain;
+          box-shadow:-12px 0 0 12px #000;
+        }
+        .thumb:last-of-type {
+        box-shadow:0 0 0 12px #000;
+        }
+        .thumb:after {
+        content:attr(title);
+        font:normal normal 20pt 'impact';
+        position:relative;
+        }
+        .thumb:hover {
+          -webkit-filter: grayscale(80%);
+          -moz-filter: grayscale(80%);
+          -ms-filter: grayscale(80%);
+          -o-filter: grayscale(80%);
+          filter: grayscale(80%);
+          filter: url(grayscale.svg#greyscale);
+          filter: gray;
+        }
+        @-webkit-keyframes TMNT {
+          0%  { left: 0px; }
+          100% { left: -1200px; }
+        }
+        a.prev,a.next {
+          height:91px;
+          position:absolute;
+          width:43px;
+          top:50%;
+          margin-top:-30px;
+          opacity:0.6;
+          text-indent:-99999px;
+          cursor:pointer;
+          -webkit-transition:opacity 200ms ease-out;
+        }
+        a.prev:hover,a.next:hover {
+          opacity:1;
+        }
+        .prev {
+          left:0;
+          background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -200px 25px;
+        }
+        .next {
+          right:0;
+          
+          background: #000 url('https://lh4.googleusercontent.com/-JN1IZLtuToI/UUoZnMG3C_I/AAAAAAAAAE8/SEbJ9nqXGnY/s226/sprite.png') no-repeat -167px 25px;
+        }
+        .slider {
+          height:100vh;
+        
+        }
+        .slide {
+          position:absolute;
+          height:100%;
+          width:100%;
+        }
+        .slider .slide:target {
+          z-index: 100;
+        }
+        img {
+          max-width:100%;
+          width:100%;
+          
+          position:inherit;
+          left:0;
+        }
+        .footer{
+          height: 40px;
+          background-color: black;
+          color: white;
+          
+          
+        }
+        .hh3{
+          margin-right: auto;
+          margin-left:25%;
+        }
+    </style>
+         
+    <body>
+        <div class="slider"  >
+            <ul>
+                <li id="no-js-slider-1" class="slide">
+                  
+                  <img src="{{ "static/photo/h1.png" }}">
+                  <a class="prev" href="#no-js-slider-3">prev</a>
+                  <a class="next" href="#no-js-slider-2">next</a>
+                </li>
+                <li id="no-js-slider-2" class="slide">
+                  
+                  <img src="{{ "static/photo/h3.png" }}" >
+                  <a class="prev" href="#no-js-slider-1">prev</a>
+                  <a class="next" href="#no-js-slider-3">next</a>           
+                </li>
+                <li id="no-js-slider-3" class="slide">
+                  <img src="{{ "static/photo/h2.png" }}" >
+                  <a class="prev" href="#no-js-slider-2">prev</a>
+                  <a class="next" href="#no-js-slider-1">next</a>          
+                </li>
+            </ul>
+            
+            </div>
+            <img src="{{ "static/pics/Home4.png" }}" >
+            <div class="footer">
+
+              <h2 class="hh3">Copyright 2021 ©  Reserved ITI-AI-Intake1@Nasercity</h2>
+          </div>
+            
+            
+              
+    </body>
+        
+</html>
+
+ 
