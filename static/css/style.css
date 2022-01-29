@@ -1,0 +1,36 @@
+body{
+    background-color :#192444;
+}
+.nav-div{
+    background:#1f2c56;
+    margin-right: 25px ;
+    padding:20px ;
+    border-left: 2px solid #0d6efd;
+    border-top: 2px solid #0d6efd;
+    border-radius: 10px;
+    /* box-shadow: 2px 2px 2px 2px #0d6efd ; */
+}
+.Pjname{
+    background:#1f2c56;
+    margin: 20px ;
+    /* margin-top: 80px; */
+    padding:20px ;
+    box-shadow: 2px 2px 2px 2px #0d6efd ;
+    border-radius: 102px 0px ;
+}
+.form-div{
+    background:#1f2c56;
+    margin: 20px ;
+    /* margin-top: 80px; */
+    padding:20px ;
+    box-shadow: 2px 2px 2px 2px #0d6efd ;
+    border-radius: 0px 102px ;
+}
+.form{
+    margin: 20px ;
+    padding:20px ;
+    border-top: 2px solid #0d6efd;
+    border-right: 2px solid #0d6efd;
+    border-radius: 10px;
+
+}
